@@ -17,8 +17,8 @@ app.post("/users", async (req, res) => {
   res.json(user);
 });
 
-// const port = process.env.PORT || 3000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-await app.listen('8080', "0.0.0.0") // Escute em 0.0.0.0 para permitir conexões externas
-console.log(`🚀 Server running on port ${port}`)
+// await app.listen('8080', "0.0.0.0") // Escute em 0.0.0.0 para permitir conexões externas
+// console.log(`🚀 Server running on port ${port}`)
