@@ -18,3 +18,36 @@ model User {
   name      String
   email     String   @unique
 }
+
+model Tecnologia {
+  id        Int       @id @default(autoincrement())
+  nome      String
+  descricao String
+  imagem    String
+  destaque  Boolean   @default(false)
+  projetos  Projeto[]
+
+  @@map("tecnologias")
+}
+
+model Imagem {
+  id        Int      @id @default(autoincrement())
+  url       String
+  projeto   Projeto  @relation(fields: [projetoId], references: [id])
+  projetoId Int
+}
+
+
+model Projeto {
+  id          Int          @id @default(autoincrement())
+  nome        String
+  descricao   String
+  imagens     Imagem[]
+  nivel       Int
+  tipo        String
+  destaque    Boolean      @default(false)
+  repositorio String
+  tecnologias Tecnologia[]
+
+  @@map("projetos")
+}
