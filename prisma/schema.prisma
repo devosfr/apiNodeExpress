@@ -30,19 +30,11 @@ model Tecnologia {
   @@map("tecnologias")
 }
 
-model Imagem {
-  id        Int      @id @default(autoincrement())
-  url       String
-  projeto   Projeto  @relation(fields: [projetoId], references: [id])
-  projetoId Int
-}
-
-
 model Projeto {
   id          Int          @id @default(autoincrement())
   nome        String
   descricao   String
-  imagens     Imagem[]
+  imagens     String
   nivel       Int
   tipo        String
   destaque    Boolean      @default(false)

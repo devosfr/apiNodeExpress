@@ -11,6 +11,11 @@ app.get("/users", async (req, res) => {
   res.json(users);
 });
 
+app.get("/projetos", async (req, res) => {
+  const users = await prisma.user.findMany();
+  res.json(users);
+});
+
 app.post("/users", async (req, res) => {
   const { name, email } = req.body;
   const user = await prisma.user.create({ data: { name, email } });
