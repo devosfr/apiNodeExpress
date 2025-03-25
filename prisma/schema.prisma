@@ -19,27 +19,27 @@ model User {
   email     String   @unique
 }
 
-model Tecnologia {
-  id        Int       @id @default(autoincrement())
-  nome      String
-  descricao String
-  imagem    String
-  destaque  Boolean   @default(false)
-  projetos  Projeto[]
+// model Tecnologia {
+//   id        Int       @id @default(autoincrement())
+//   nome      String
+//   descricao String
+//   imagem    String
+//   destaque  Boolean   @default(false)
+//   projetos  Projeto[]
 
-  @@map("tecnologias")
-}
+//   @@map("tecnologias")
+// }
 
-model Projeto {
-  id          Int          @id @default(autoincrement())
-  nome        String
-  descricao   String
-  imagens     String
-  nivel       Int
-  tipo        String
-  destaque    Boolean      @default(false)
-  repositorio String
-  tecnologias Tecnologia[]
+// model Projeto {
+//   id          Int          @id @default(autoincrement())
+//   nome        String
+//   descricao   String
+//   imagens     String
+//   nivel       Int
+//   tipo        String
+//   destaque    Boolean      @default(false)
+//   repositorio String
+//   tecnologias Tecnologia[]
 
-  @@map("projetos")
-}
+//   @@map("projetos")
+// }
