@@ -16,7 +16,7 @@ CREATE TABLE `tecnologies` (
    `image` VARCHAR(191) NOT NULL,
    `emphasis` BOOLEAN NOT NULL DEFAULT false,
 
-    CONSTRAINT "tecnologies_pkey" PRIMARY KEY (`id`)
+    CONSTRAINT `tecnologies_pkey` PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
@@ -30,5 +30,5 @@ CREATE TABLE `projects` (
    `emphasis` BOOLEAN NOT NULL DEFAULT false,
    `repository` VARCHAR(191) NOT NULL,
 
-    CONSTRAINT "projetos_pkey" PRIMARY KEY ("id")
+    CONSTRAINT `projetos_pkey` PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
