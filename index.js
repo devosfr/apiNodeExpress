@@ -1,5 +1,5 @@
 const express = require("express");
-// import cors from 'cors';
+import cors from 'cors';
 const { PrismaClient } = require("@prisma/client");
 
 const app = express();
