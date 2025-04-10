@@ -14,6 +14,18 @@ app.use(cors({
   origin: 'http://127.0.0.1:8080'
 }));
 
+api.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  next();
+});
+
 app.get("/users", async (req, res) => {
   const users = await prisma.user.findMany();
   res.json(users);
