@@ -10,9 +10,9 @@ app.use(express.json());
 app.use(cors()); // Permite qualquer origem
 
 // ou, para permitir apenas o seu front-end:
-// app.use(cors({
-//   origin: 'http://127.0.0.1:8080'
-// }));
+app.use(cors({
+  origin: 'http://127.0.0.1:8080'
+}));
 
 api.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
